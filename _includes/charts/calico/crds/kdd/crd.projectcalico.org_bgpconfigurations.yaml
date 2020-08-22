@@ -98,6 +98,10 @@ spec:
                       type: array
                   type: object
                 type: array
+              password:
+                description: 'Password is the BGP password used by a node. [Default:
+                  nil]'
+                type: string
               serviceClusterIPs:
                 description: ServiceClusterIPs are the CIDR blocks from which service
                   cluster IPs are allocated. If specified, Calico will advertise these

@@ -25,6 +25,7 @@ spec:
   node: rack1-host1
   peerIP: 192.168.1.1
   asNumber: 63400
+  password: mypassword
 ```
 
 ### BGP peer definition
@@ -41,7 +42,8 @@ spec:
 |-------------|-----------------------------|-------------------|--------|------------|
 | node     | If specified, the scope is node level, otherwise the scope is global. | The hostname of the node to which this peer applies. | string | |
 | peerIP   | The IP address of this peer and an optional port number. If port number is not set, and peer is Calico node with `listenPort` set, then `listenPort` is used. | Valid IPv4 or IPv6 address. If port number is set use, `IPv4:port` or `[IPv6]:port` format. | string | |
-| asNumber | The remote AS Number of the peer. | A valid AS Number, may be specified in dotted notation. | integer/string |
+| asNumber | The remote AS Number of the peer. | A valid AS Number, may be specified in dotted notation. | integer/string | |
+| password | The remote BGP password. | A valid BGP password. | string | |
 | nodeSelector | Selector for the nodes that should have this peering.  When this is set, the `node` field must be empty. | | [selector](networkpolicy#selector) |
 | peerSelector | Selector for the remote nodes to peer with.  When this is set, the `peerIP` and `asNumber` fields must be empty. | | [selector](networkpolicy#selector) |
 | keepOriginalNextHop | Maintain and forward the original next hop BGP route attribute to a specific Peer within a different AS. | | boolean |

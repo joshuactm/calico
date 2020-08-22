@@ -28,6 +28,7 @@ metadata:
 spec:
   bgp:
     asNumber: 64512
+    password: 21546
     ipv4Address: 10.244.0.1/24
     ipv6Address: 2001:db8:85a3::8a2e:370:7334/120
     ipv4IPIPTunnelAddr: 192.168.0.1
@@ -63,6 +64,7 @@ spec:
 | Field       | Description                 | Accepted Values   | Schema | Default    |
 |-------------|-----------------------------|-------------------|--------|------------|
 | asNumber    | The AS Number of your `{{site.nodecontainer}}`. | Optional. If omitted the global value is used (see [example modifying Global BGP settings](/networking/bgp) for details about modifying the `asNumber` setting). | integer |
+| password    | The BGP password of your `{{site.nodecontainer}}`. | Optional. If omitted the global value is used if set. | string |
 | ipv4Address | The IPv4 address and subnet exported as the next-hop for the {{site.prodname}} endpoints on the host | The IPv4 address must be specified if BGP is enabled. | string |
 | ipv6Address | The IPv6 address and subnet exported as the next-hop for the {{site.prodname}} endpoints on the host | Optional | string |
 | ipv4IPIPTunnelAddr | IPv4 address of the IP-in-IP tunnel. This is system configured and should not be updated manually. | Optional IPv4 address | string |
